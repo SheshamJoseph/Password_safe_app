@@ -1,13 +1,16 @@
 from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel
+from kivy.uix.screenmanager import ScreenManager
+from app.views import MainScreen
 
 
-class MainApp(MDApp):
-    """docstring for MainApp"""
-
+class PasswordSafeApp(MDApp):
     def build(self):
-        return MDLabel(text="Hello world!", halign="center")
+        sm = ScreenManager()
+        # sm.add_widget(MainScreen(name="main"))
+        sm.add_widget(MainScreen())
+        # other screens
+        return sm
 
 
 if __name__ == "__main__":
-    MainApp().run()
+    PasswordSafeApp().run()
