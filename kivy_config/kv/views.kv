@@ -1,5 +1,7 @@
 #:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
 #:import MDLabel kivymd.uix.label.MDLabel
+#:import MDIconButton kivymd.uix.button.MDIconButton
+#:import MDCard kivymd.uix.card.MDCard
 
 <Mainscreen>
 	name: 'main'
@@ -15,9 +17,76 @@
 		orientation: 'vertical'
 		padding: dp(20)
 		spacing: dp(20)
+		halign: "center"
 
 		MDLabel:
 			text: 'Password Safe'
 			halign: 'center'
 			theme_text_color: 'Primary'
 			#font_style: "H4"
+
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+
+			# Add password button
+			MDCard:
+				orientation: "vertical"
+				size_hint: None, None
+				size: "200dp", "100dp"
+				padding: dp(15)
+				ripple_behaviour: True
+				# define screen to go to on release
+
+				MDLabel:
+					text: "Add Password"
+					theme_text_color: "Primary"
+					halign: "center"
+
+				MDIconButton:
+					icon: "lock-plus"
+					pos_hint: {"center_x": 0.5}
+					user_font_size: "40sp"
+
+			# view passworda button
+			MDCard:
+				orientation: "vertical"
+				size_hint: None, None
+				size: "200dp", "100dp"
+				padding: dp(15)
+				ripple_behaviour: True
+				# define screen to go to on release
+
+				MDLabel:
+					text: "View Passwords"
+					theme_text_color: "Primary"
+					halign: "center"
+
+
+				MDIconButton:
+					icon: "lock-open-outline"
+					pos_hint: {"center_x": 0.5}
+					user_font_size: "40sp"
+
+
+			# TODO: Change this to import passwords
+			# generate password
+			MDCard:
+				orientation: "vertical"
+				size_hint: None, None
+				size: "200dp", "100dp"
+				padding: dp(15)
+				ripple_behaviour: True
+				# define screen to go to on release
+
+				MDLabel:
+					text: "Add Password"
+					theme_text_color: "Primary"
+					halign: "center"
+
+				MDIconButton:
+					icon: "lock-plus"
+					pos_hint: {"center_x": 0.5}
+					user_font_size: "40sp"
